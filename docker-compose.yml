@@ -1,0 +1,24 @@
+version: '2'
+services:
+  php-fpm:
+    build: ./docker/php-fpm/
+    restart: unless-stopped
+    links:
+      - database:postgres
+    working_dir: /var/www/html
+    volumes:
+     - ./src/:/var/www/html/
+  nginx:
+    build: ./docker/nginx/
+    links:
+     - php-fpm
+    volumes_from:
+     - php-fpm
+    ports:
+     - "timetracker.dev:80:80"
+  database:
+   build: ./docker/postgres/
+   restart: unless-stopped
+   volumes:
+     - ./docker/postgres/db-dump:/docker-entrypoint-initdb.d
+     - ./docker/postgres/init:/docker-entrypoint-initdb.d

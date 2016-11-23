@@ -1,0 +1,11 @@
+#PhpStorm
+.idea
+
+#Composer libraries
+/src/vendor
+
+/src/gulp.js
+src/TIMER/css/
+src/TIMER/img/
+src/TIMER/js/
+src/TIMER/tmp/
