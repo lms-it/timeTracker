@@ -4,8 +4,12 @@
 #Composer libraries
 /src/vendor
 
-/src/gulp.js
-src/TIMER/css/
-src/TIMER/img/
-src/TIMER/js/
-src/TIMER/tmp/
+#npm modules
+/src/node_modules
+
+#Bower components
+/src/bower_components
+/src/assets/css
+/src/assets/js/all.js
+/src/assets/js/all-min.js
+/src/assets/log

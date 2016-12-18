@@ -21,6 +21,8 @@ RUN { \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
+#Php set default datetime
+RUN echo date.timezone = "Europe/Copenhagen" >> /usr/local/etc/php/conf.d/datetime.ini
 
 #Install xdebug
 RUN yes | pecl install xdebug \
@@ -31,12 +33,7 @@ RUN yes | pecl install xdebug \
 
 #Hide PHP version
 RUN echo "expose_php=Off" >> /usr/local/etc/php/conf.d/timetracker.ini
-#RUN echo "extension=php_pdo_pgsql.dll" > /usr/local/etc/php/conf.d/timetracker.ini
 
 VOLUME /var/www/html
-RUN mkdir /var/www/html/tmp/ \
-&& chmod -R 777 /var/www/html/tmp/
-
-RUN pwd
 
 

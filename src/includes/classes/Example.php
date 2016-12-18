@@ -5,8 +5,6 @@
  * @author   Mohamed Salem Lamiri <lamiri.med.lamiri@gmail.com>
  */
 
-require_once  '../../vendor/autoload.php';
-
 
 /*
 * @access   public
